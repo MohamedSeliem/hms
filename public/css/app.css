@@ -16178,6 +16178,14 @@ label.panel-block:hover {
   background: rgba(255, 56, 96, 0.05);
 }
 
+.is-muted {
+  color: #b5b5b5;
+}
+
+.is-muted:hover {
+  color: #7a7a7a;
+}
+
 .dropdown {
   position: relative;
 }

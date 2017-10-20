@@ -35,9 +35,9 @@
                     <a class="navbar-item is-tab is-hidden-tablet" href="#">Resources</a>
                     <a class="navbar-item is-tab is-hidden-tablet" href="#">Contact Us</a>
                     </div>
-                    @if(!Auth::guest())
-                        <a href="#" class="navbar-item is-tab">Login</a>
-                        <a href="#" class="navbar-item is-tab">Sign up</a>
+                    @if(Auth::guest())
+                        <a href="{{ route('login') }}" class="navbar-item is-tab">Login</a>
+                        <a href="{{ route('register') }}" class="navbar-item is-tab">Sign up</a>
                     @else
                         <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">Hey Seliem</a>
