@@ -47,7 +47,7 @@
                         <input class="input {{$errors->has('password-confirmation')?'is-danger':''}}" type="password" name="password-confirmation" id="password-confirmation" required>
                     </p>
                     @if($errors->has('password-confirmation'))
-                        <p class="help is-danger">{{$errors->first('password-confirmation')}}</p>
+                        <p class="help is-success">{{$errors->first('password-confirmation')}}</p>
                     @endif
                     <button class="button is-primary is-outlined is-fullwidth m-t-30">Reset Password</button>
                 </div>

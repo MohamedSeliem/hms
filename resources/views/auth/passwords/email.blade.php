@@ -23,7 +23,7 @@
                     @if($errors->has('email'))
                         <p class="help is-danger">{{$errors->first('email')}}</p>
                     @endif
-                    <button class="button is-primary is-outlined is-fullwidth m-t-30">submit</button>
+                    <button class="button is-success is-outlined is-fullwidth m-t-30">submit</button>
                 </div>
                 </form>
             </div>

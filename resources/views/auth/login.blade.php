@@ -26,7 +26,7 @@
                         <p class="help is-danger">{{$errors->first('password')}}</p>
                     @endif
                     <b-checkbox name="remember" class="m-t-20">Remember me</b-checkbox>
-                    <button class="button is-primary is-outlined is-fullwidth m-t-30">Log in</button>
+                    <button class="button is-success is-outlined is-fullwidth m-t-30">Log in</button>
                 </div>
                 </form>
             </div>
