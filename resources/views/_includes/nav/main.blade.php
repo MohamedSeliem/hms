@@ -22,7 +22,7 @@
                     <a class="navbar-item is-tab is-hidden-tablet" href="#">Resources</a>
                     <a class="navbar-item is-tab is-hidden-tablet" href="#">Contact Us</a>
                     </div>
-                    @if(Auth::guest())
+                    @guest
                         <a href="{{ route('login') }}" class="navbar-item is-tab">Login</a>
                         <a href="{{ route('register') }}" class="navbar-item is-tab">Sign up</a>
                     @else

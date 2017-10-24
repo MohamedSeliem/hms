@@ -989,16 +989,7 @@ window.Vue = __webpack_require__(34);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
-var app = new Vue({
-  el: '#app',
-  data: {}
-});
-$(document).ready(function () {
-  //  Dropdowns
-  $('.dropdown').hover(function (e) {
-    $(this).toggleClass('is-open');
-  });
-});
+__webpack_require__(48);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -40156,6 +40147,40 @@ exports.clearImmediate = clearImmediate;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */
+/***/ (function(module, exports) {
+
+var accordions = document.getElementsByClassName('has-submenu');
+
+for (var i = 0; i < accordions.length; i++) {
+  accordions[i].onclick = function () {
+    this.classList.toggle('is-active');
+
+    var submenu = this.nextElementSibling;
+    if (submenu.style.maxHeight) {
+      // menu is open, we need to close it now
+      submenu.style.maxHeight = null;
+      submenu.style.marginTop = null;
+      submenu.style.marginBottom = null;
+    } else {
+      // meny is close, so we need to open it
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+      submenu.style.marginTop = "0.75em";
+      submenu.style.marginBottom = "0.75em";
+    }
+  };
+}
 
 /***/ })
 /******/ ]);

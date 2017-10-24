@@ -13,16 +13,9 @@ import Buefy from 'buefy'
 
 Vue.use(Buefy);
 
-var app=new Vue({
-	el:'#app',
-	data:{}
-});
-$(document).ready(function() {
-  //  Dropdowns
-  $('.dropdown').hover(function(e) {
-    $(this).toggleClass('is-open')
-  })
-})
+
+
+require('./manage');
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
