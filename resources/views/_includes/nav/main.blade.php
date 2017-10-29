@@ -2,26 +2,32 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item is-paddingless brand-item" href="{{route('home')}}">
-                        <img src="{{asset('images/hms-logo.png')}}" alt="HMS logo" width="200px" height="50px">
+                        <img src="{{asset('images/hms-logo.png')}}" alt="HMS logo">
                     </a>
-                    <a class="navbar-item is-tab is-hidden-mobile m-l-10" href="#">About</a>
-                    <a class="navbar-item is-tab is-hidden-mobile" href="#">Solution</a>
-                    <a class="navbar-item is-tab is-hidden-mobile" href="#">Events</a>
-                    <a class="navbar-item is-tab is-hidden-mobile" href="#">Resources</a>
-                    <a class="navbar-item is-tab is-hidden-mobile" href="#">Contact Us</a>
-                </div>
-                   <span class="nav-toggle">
+
+                 @if (Request::segment(1) == "manage")
+                    <a class="navbar-item is-hidden-desktop" id="admin-slideout-button">
+                      <span class="icon">
+                        <i class="fa fa-arrow-circle-o-right"></i>
+                      </span>
+                    </a>
+                  @endif
+                  <button class="button navbar-burger">
                       <span></span>
                       <span></span>
                       <span></span>
-                    </span>
+                    </button>
+                   </div>
+                   
                     <div class="navbar-menu">
                     <div class="navbar-start">
-                    <a class="navbar-item is-tab is-hidden-tablet is-active" href="#">About</a>
-                    <a class="navbar-item is-tab is-hidden-tablet" href="#">Solution</a>
-                    <a class="navbar-item is-tab is-hidden-tablet" href="#">Resources</a>
-                    <a class="navbar-item is-tab is-hidden-tablet" href="#">Contact Us</a>
+                    <a class="navbar-item is-tab is-active" href="#">About</a>
+                    <a class="navbar-item is-tab " href="#">Solution</a>
+                    <a class="navbar-item is-tab " href="#">Resources</a>
+                    <a class="navbar-item is-tab " href="#">Contact Us</a>
                     </div>
+
+                    <div class="navbar-end nav-menu" style="overflow: visible">
                     @guest
                         <a href="{{ route('login') }}" class="navbar-item is-tab">Login</a>
                         <a href="{{ route('register') }}" class="navbar-item is-tab">Sign up</a>
@@ -55,6 +61,9 @@
                         </a>
                          @include('_includes.forms.logout')
                         </div>
-                    @endif
+                    </div>
+                    @endguest
+                </div>
+            </div>
             </div>
         </nav>

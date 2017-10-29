@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Health Mointoring System
+                    Health Monitoring System
                 </div>
             </div>
         </div>

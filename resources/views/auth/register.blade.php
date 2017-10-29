@@ -36,14 +36,14 @@
                     @endif
                 </div>
                 <div class="field">
-                    <label for="password-confirmation" class="label">Confirm Password</label>
+                    <label for="password_confirmation" class="label">Confirm Password</label>
                     <p class="control">
-                        <input class="input {{$errors->has('password-confirmation')?'is-danger':''}}" type="password" name="password-confirmation" id="password-confirmation" required>
+                        <input class="input {{$errors->has('password_confirmation')?'is-danger':''}}" type="password" name="password_confirmation" id="password_confirmation" required>
                     </p>
                     @if($errors->has('password-confirmation'))
                         <p class="help is-danger">{{$errors->first('password-confirmation')}}</p>
                     @endif
-                    <button class="button is-success is-outlined is-fullwidth m-t-30">Register</button>
+                    <button class="button is-success is-outlined is-fullwidth m-t-30" type="submit">Register</button>
                 </div>
                 </form>
             </div>

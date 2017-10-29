@@ -35,16 +35,7 @@
           </div>
         </div> <!-- end of .column -->
 
-        <div class="column">
-          <label for="roles" class="label">Roles:</label>
-          <input type="hidden" name="roles" :value="rolesSelected" />
 
-            @foreach ($roles as $role)
-              <div class="field">
-                <b-checkbox v-model="rolesSelected" :native-value="{{$role->id}}">{{$role->display_name}}</b-checkbox>
-              </div>
-            @endforeach
-        </div>
       </div> <!-- end of .columns for forms -->
       <div class="columns">
         <div class="column">
