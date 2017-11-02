@@ -19,12 +19,15 @@ class RegisterTest extends DuskTestCase
                     $browser->visit('/')
                     ->clickLink('Register')
                     ->assertSee('Register')
-                    ->value('#name','Mohamed Seliem')
-                    ->value('#email','seliem@app.com')
+                    ->value('#name','Mohamed')
+                    ->value('#email','seliem3@app.com')
                     ->value('#password','123456')
                     ->value('#password_confirmation','123456')
-                    ->click('button[type="submit"]')
-                    ->assertPathIs('/register');
+                    ->press('Register')
+                    ->pause(1000)
+                    ->assertPathIs('/register')
+                    ->assertSee('Register')
+                    ->assertSee('The email has already been taken.');
         });
     }
 }

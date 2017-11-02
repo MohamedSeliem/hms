@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
 <body>
@@ -22,6 +23,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiUrlS590suj6RsjaW3UgIKBXgrIkfoP8 &libraries=places"
+    async="" defer=""></script>
+    <script src="{{asset('js/script.js')}}"></script>
     @yield('scripts')
 </body>
 </html>
