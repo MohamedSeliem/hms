@@ -32,8 +32,8 @@
                 <div class="wrap">
                 <!--start-logo-->
                 <div class="logo">
-                    <a href="index.html" style="font-size: 30px;">Health Monitoring System</a>
-                    <h3 style="font-size: 20px;">We care about your Health.</h3>
+                    <a href="index.html" style="font-size: 30px;"> Health Monitoring System</a>
+                    <h3 style="font-size: 20px;"> We care about your Health.</h3>
                 </div>
                 <!--end-logo-->
                 <!--start-top-nav-->
@@ -122,7 +122,7 @@
            <div class="content-box">
            <div class="section group">
                 <div class="col_1_of_3 span_1_of_3 first">
-                <h3>Health Monitoring System (HMS)</h3>
+                <h3> Health Monitoring System (HMS)</h3>
                 <p>Our goal is to provide Public Health officials with the tools that enhance their ability to safeguard the health of the communities they serve. Our Community Health Surveillance service, EpiCenter analyzes healthcare data in real time using a software-as-a-service approach.</p>
                 </div>
                 <div class="col_1_of_3 span_1_of_3 second">
@@ -130,7 +130,7 @@
                     <p>No software to buy or look after. Just get online, sign up and you are up and running in 3 minutes. Access your monitoring anywhere 24/7/365. FREE and Tailored plans available.</p>
                 </div>
                 <div class="col_1_of_3 span_1_of_3 third">
-                    <h3>Instant alert</h3>
+                    <h3> Instant alert</h3>
                     <p>Take full control of your alerts. Set your triggers and get instant alerts via email, SMS, Twitter or phone whenever something is wrong. Our data center will alert you even if your network is down.</p>
 
                 </div>

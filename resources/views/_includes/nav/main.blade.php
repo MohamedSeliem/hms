@@ -21,10 +21,15 @@
                    
                     <div class="navbar-menu">
                     <div class="navbar-start">
-                    <a class="navbar-item is-tab is-active" href="#">About</a>
+                    @guest
+                    <a class="navbar-item is-tab is-active" href="{{ route('login') }}">Login</a>
+                    @else
+                    <a class="navbar-item is-tab is-active" href="{{ route('home') }}">Welcome</a>
+                    @endguest
                     <a class="navbar-item is-tab " href="#">Solution</a>
                     <a class="navbar-item is-tab " href="#">Resources</a>
                     <a class="navbar-item is-tab " href="#">Contact Us</a>
+                    <a class="navbar-item is-tab " href="#">About</a>
                     </div>
 
                     <div class="navbar-end nav-menu" style="overflow: visible">
