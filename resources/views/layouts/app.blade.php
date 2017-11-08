@@ -23,7 +23,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiUrlS590suj6RsjaW3UgIKBXgrIkfoP8 &libraries=places"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ99YneQpBoEoTbH39i4diWBqjqVt59fg &libraries=places"
     async="" defer=""></script>
     <script src="{{asset('js/mapscript.js')}}"></script>
     @yield('scripts')

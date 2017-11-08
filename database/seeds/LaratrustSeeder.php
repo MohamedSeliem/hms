@@ -58,7 +58,7 @@ class LaratrustSeeder extends Seeder
                 'name' => ucwords(str_replace('_', ' ', $key)),
                 'email' => $key.'@app.com',
                 'password' => bcrypt('password'),
-                'api_token'=>bin2hex(openssl_random_pseudo_bytes(30))
+                //'api_token'=>bin2hex(openssl_random_pseudo_bytes(30))
             ]);
 
             $user->attachRole($role);
@@ -77,7 +77,7 @@ class LaratrustSeeder extends Seeder
                         'email' => $key.'@app.com',
                         'password' => bcrypt('password'),
                         'remember_token' => str_random(10),
-                        'api_token'=>bin2hex(openssl_random_pseudo_bytes(30))
+                      //  'api_token'=>bin2hex(openssl_random_pseudo_bytes(30))
 
                     ]);
                     $permissions = [];
