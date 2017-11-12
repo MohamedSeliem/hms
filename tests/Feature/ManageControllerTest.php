@@ -13,30 +13,28 @@ class ManageControllerTest extends TestCase
 	/**
      * @test
      */
-    public function redirects_to_home_if_not_permitted()
+    public function redirects_to_login_if_not_permitted()
     {    
-    	$user = new User(array('name' => 'patient','email'=>'patient@app.com','password'=>'password'));
-   		$this->be($user);   
-
-        $response =$this->call('GET', '/home');
-		$response->assertStatus(200);
+   
+        $this->call('POST','/login', ['email'=>'patient@app.com','password'=>'password']);
 		$response =$this->call('GET', 'manage');
-		$response->assertStatus(302);
+		$response->assertStatus(302)
+        ->assertRedirect('/login'); // as you do not have the credential to manage
         
+        $this->call('POST','/logout');//logout to end up your session
     }
 
     /**
      * @test
      */
-    public function returns_manage_page_if_permitted()
+    public function redirects_to_manage_page_if_permitted()
     {
-    	$user = new User(array('name' => 'superadministrator','email'=>'superadministrator@app.com','password'=>'password'));
-        $this->be($user);
-
-        $response =$this->call('GET', '/home');
-		$response->assertStatus(200);
+        $this->call('POST','/login', ['email'=>'superadministrator@app.com','password'=>'password']);
 		$response =$this->call('GET', 'manage');
-		$response->assertStatus(200);
-	}
-        
+		$response->assertStatus(302)
+        ->assertRedirect('/manage/dashboard');
+
+        $this->call('POST','/logout');//logout to end up your session
+	}   
+
 }

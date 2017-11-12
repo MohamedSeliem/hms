@@ -46,8 +46,6 @@
             @endforeach
         </div>
       </div> <!-- end of .columns for forms -->
-      
-      </div> <!-- end of .columns for forms -->
       <div class="columns">
         <div class="column">
           <hr />

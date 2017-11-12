@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -24,8 +24,7 @@ class HomeControllerTest extends TestCase
      */
     public function returns_home_page_if_authenticated()
     {
-    	$user = new User(array('name' => 'superadministrator','email'=>'superadministrator@app.com','password'=>'password'));
-        $this->be($user);
+    	$this->call('POST','/login', ['email' => 'administrator@app.com','password'=>'password']);
 		$response = $this->call('GET', 'home');
         $response->assertStatus(200);//200 success
 
