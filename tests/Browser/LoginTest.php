@@ -11,7 +11,7 @@ class LoginTest extends DuskTestCase
 {
 
     /** 
-    @test 
+    *@test 
     */
 
     public function UserLoginCorrectly()
@@ -35,7 +35,7 @@ class LoginTest extends DuskTestCase
     }
     
     /** 
-        @test 
+     *   @test 
     */
     public function LoginWithEmptyEmailField()
     {
@@ -55,7 +55,7 @@ class LoginTest extends DuskTestCase
 
     }
     /** 
-        @test 
+      *  @test 
     */
     public function LoginWithEmptyPasswordField()
     {
@@ -75,7 +75,7 @@ class LoginTest extends DuskTestCase
 
     }
     /** 
-        @test 
+      *  @test 
     */
     public function LoginWithUnregisteredEmail()
     {
@@ -96,7 +96,7 @@ class LoginTest extends DuskTestCase
     }
 
     /** 
-        @test 
+      *  @test 
     */
     public function LoginWithWrongPassword()
     {
@@ -116,7 +116,7 @@ class LoginTest extends DuskTestCase
 
     }
     /** 
-        @test 
+      *  @test 
     */
     public function LoginWhenLoggedin()
     {
