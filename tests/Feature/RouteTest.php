@@ -127,4 +127,24 @@ class RouteTest extends TestCase
          $response->assertStatus(302);
          $response->assertSee("Redirecting to http://localhost/home");
     }
+
+    /*
+     *@test
+     */
+    public function PostDatatoJunkPage(){
+        
+
+         $response = $this->call('POST','/junk', ['name'=>'newname','email' => 'newemail@app.com','password'=>'password','password_confirmation'=>'password']);
+         $response->assertStatus(404);//(Not Found Request)
+    }
+
+    /*
+     *@test
+     */
+    public function GeTdataFromJunkPage(){
+        
+
+         $response = $this->call('GET','/junk');
+         $response->assertStatus(404);//Page does n0t exist (Not Found Request)
+    }
 }
