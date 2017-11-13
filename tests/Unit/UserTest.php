@@ -10,7 +10,7 @@ class UserTest extends TestCase
 {
 	 /**
 	 *@test
-     
+     */
 
      public function CheckUserCreatedInTheDatabase()
     {
@@ -28,7 +28,7 @@ class UserTest extends TestCase
    		
    		//patient tocken tkb5A3OzKsNrS3EZg02RJ7ejVcTPQ6uupsEOZdOZNxWsr7z3QyJa1997q05D 
 		$this->assertEquals('tkb5A3OzKsNrS3EZg02RJ7ejVcTPQ6uupsEOZdOZNxWsr7z3QyJa1997q05D',$user->getRememberToken());
-    }*/
+    }
 
 }
 
@@ -47,4 +47,4 @@ class UserTest extends TestCase
 
         $this->assertEquals('mocked',$mock->posts());
     }
-     
+    */

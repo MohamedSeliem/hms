@@ -11,7 +11,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class RouteTest extends TestCase
 {
     
-
     /**
 	 *@test
      */
@@ -120,12 +119,12 @@ class RouteTest extends TestCase
     }
     /*
 	 *@test
-     *
+     */
     public function PostRegisterPage(){
         
 
     	 $response = $this->call('POST','/register', ['name'=>'newname','email' => 'newemail@app.com','password'=>'password','password_confirmation'=>'password']);
          $response->assertStatus(302);
          $response->assertSee("Redirecting to http://localhost/home");
-    }*/
+    }
 }

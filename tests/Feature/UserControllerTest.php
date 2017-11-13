@@ -18,7 +18,7 @@ class UserControllerTest extends TestCase
     	$response =$this->call('GET', '/manage/users');
 		$response->assertStatus(200)
 		->assertViewIs("manage.users.index")
-		->assertSee("mohamed@app.com")		//a user
+		->assertSee("subscriber@app.com")		//a user
 		->assertSee("storeMeplease@app.com");   // anothr user
 
 
