@@ -11,7 +11,7 @@ class UserTest extends TestCase
 	 /**
 	 *@test
      
-*/
+
      public function CheckUserCreatedInTheDatabase()
     {
     	//creating a new user
@@ -28,7 +28,7 @@ class UserTest extends TestCase
    		
    		//patient tocken tkb5A3OzKsNrS3EZg02RJ7ejVcTPQ6uupsEOZdOZNxWsr7z3QyJa1997q05D 
 		$this->assertEquals('tkb5A3OzKsNrS3EZg02RJ7ejVcTPQ6uupsEOZdOZNxWsr7z3QyJa1997q05D',$user->getRememberToken());
-    }
+    }*/
 
 }
 

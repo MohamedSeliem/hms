@@ -19,7 +19,7 @@ class UserControllerTest extends TestCase
 		$response->assertStatus(200)
 		->assertViewIs("manage.users.index")
 		->assertSee("mohamed@app.com")		//a user
-		->assertSee("subscriber@app.com");   // anothr user
+		->assertSee("storeMeplease@app.com");   // anothr user
 
 
         $this->call('POST','/logout');
@@ -105,5 +105,61 @@ class UserControllerTest extends TestCase
 		->assertViewIs("manage.users.index"); 
     }
 
+    /**
+     * @test
+     */
+    public function StoreNewUserTest(){
+        //Login as an admin to create user
+        $this->call('POST','/login', ['email' => 'administrator@app.com','password'=>'password']);
+
+        //create post request with json contain info of the new user.
+        $response=$this->call('POST','/manage/users', ['name'=>'storeMe','email' => 'newuser@app.com','password'=>'password']);
+
+        //if the user created successfully you will get redirected to a page that shows the user you created with its number.
+        //ToDo obtain the user ID automatically
+        $user = User::where('email', 'newuser@app.com')->first();
+        $response->assertStatus(302)
+        ->assertRedirect("/manage/users/{$user->id}");
+    }
+        /**
+     * @test
+     */
+    public function doNotStoreNewUser_ifduplicate(){
+        //Login as an admin to create user
+        $this->call('POST','/login', ['email' => 'administrator@app.com','password'=>'password']);
+
+        //create post request with json contain info of the new user.
+        $response=$this->call('POST','/manage/users', ['name'=>'storeMe','email' => 'storeMeplease@app.com','password'=>'password']);
+
+        //if the user not created you will home page.
+  
+
+        $response->assertStatus(302)
+        ->assertRedirect("/");
+    }
+
+    /**
+     * @test
+     */
+    public function updateUserTest_ifexist(){
+        //Login as an admin to update user
+        $this->call('POST','/login', ['email' => 'administrator@app.com','password'=>'password']);
+
+        //select user you want to update
+        $user = User::where('email', 'newuser@app.com')->first();
+
+
+        if($user->id != null)
+        {
+            $response=$this->call('PUT','/manage/users/{$user->id}', ['email' => 'updateuser@app.com','password'=>'password'],$user->id);
+            printf($user->id);
+            $response->assertStatus(302)
+            ->assertRedirect("/manage/users/{$user->id}");
+        }
+        else{
+            asserTrue(false);
+        }
+        
+    }
 }
 
