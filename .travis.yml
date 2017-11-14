@@ -25,36 +25,5 @@ services: mysql
 install:
   # create a new database for the hyn connection
   - export DB_USERNAME=travis DB_DATABASE=hms DB_PASSWORD= QUEUE_DRIVER=sync
-  # specify the laravel service providers to insert
-  - export PACKAGE_PROVIDER="
-        
-        # Package Service Providers...
-         
-        Laravel\\\\Passport\\\\PassportServiceProvider::class,
-        
-        # Application Service Providers...
-         
-        App\\\\Providers\\\\AppServiceProvider::class,
-        App\\\\Providers\\\\AuthServiceProvider::class,
-        App\\\\Providers\\\\ObserverServiceProvider::class,
-        App\\\\Providers\\\\EventServiceProvider::class,
-        App\\\\Providers\\\\RouteServiceProvider::class,
-     
-        #Third Party Service Providers
-         
-        Laratrust\\\\LaratrustServiceProvider::class,"
-        
-  #specify the seed class to seed the data
-  - export SEED_CLASS=DatabaseSeeder::class
-  #specify the package to test
-  - export PACKAGE_NAME=hms/App
-  #run the setup script
-  - curl -s https://raw.githubusercontent.com/kevupton/docker-laravel-tests/master/setup.sh | bash
- 
-script:
-  #script to setup the package for testing
-  - cd laravel
-  - composer update
-  - php artisan vendor:publish --force
-  - php artisan migrate --seed #setups the migrations and seeding
-  - phpunit "vendor/$PACKAGE_NAME" #runs the phpunit just for your package.
+  #run the setup script
+  - curl -s https://github.com/MohamedSeliem/hms/blob/master/setup.sh
