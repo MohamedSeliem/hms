@@ -1,4 +1,4 @@
-3# Health Monitoring System
+## Health Monitoring System
 
 ## Synopsis
 
