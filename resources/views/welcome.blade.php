@@ -32,7 +32,7 @@
                 <div class="wrap">
                 <!--start-logo-->
                 <div class="logo">
-                    <a href="index.html" style="font-size: 30px;"> Health Monitoring System</a>
+                    <a href="{{url('/')}}" style="font-size: 30px;"> Health Monitoring System</a>
                     <h3 style="font-size: 20px;"> We care about your Health.</h3>
                 </div>
                 <!--end-logo-->

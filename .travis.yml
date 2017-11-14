@@ -1,55 +1,44 @@
-
-language: php
- 
-sudo: true
- 
+language: php 
+sudo: true 
 php:
-  - 5.5
-  - 5.6
-  - 7.0
-  - hhvm
- 
+  - 5.5
+  - 5.6
+  - 7.0
+  - hhvm
+
 sudo: false
- 
+
 matrix:
-  fast_finish: true
- 
-  allow_failures:
-    - php: hhvm
- 
+  fast_finish: true
+  allow_failures:
+    - php: hhvm
+
 cache:
-  directories:
-    - laravel #only cache the laravel directory
- 
+  directories:
+  - laravel #only cache the laravel directory
+
 services: mysql
- 
+
 install:
-  # create a new database for the hyn connection
-  - export DB_USERNAME=travis DB_DATABASE=hms DB_PASSWORD= QUEUE_DRIVER=sync
-   # specify the laravel service providers to insert 
+# create a new database for the hyn connection
+- export DB_USERNAME=travis DB_DATABASE=hms DB_PASSWORD= QUEUE_DRIVER=sync
+# specify the laravel service providers to insert 
+- export PACKAGE_PROVIDER=" 
+# Package Service Providers... 
+Laravel\\\\Passport\\\\PassportServiceProvider::class,
+# Application Service Providers... 
+App\\\\Providers\\\\AppServiceProvider::class,
+App\\\\Providers\\\\AuthServiceProvider::class,
+App\\\\Providers\\\\ObserverServiceProvider::class,
+App\\\\Providers\\\\EventServiceProvider::class,
+App\\\\Providers\\\\RouteServiceProvider::class,
+#Third Party Service Providers 
+Laratrust\\\\LaratrustServiceProvider::class,"
 
- - export PACKAGE_PROVIDER=" 
-  # Package Service Providers... 
-  Laravel\\\\Passport\\\\PassportServiceProvider::class, 
-  # Application Service Providers... 
-  App\\\\Providers\\\\AppServiceProvider::class, 
-  App\\\\Providers\\\\AuthServiceProvider::class, 
-  App\\\\Providers\\\\ObserverServiceProvider::class, 
-  App\\\\Providers\\\\EventServiceProvider::class, 
-  App\\\\Providers\\\\RouteServiceProvider::class, 
-
- #Third Party Service Providers 
-
-  Laratrust\\\\LaratrustServiceProvider::class," 
-
- #specify the seed class to seed the data 
-
- - export SEED_CLASS=DatabaseSeeder::class 
+#specify the seed class to seed the data 
+- export SEED_CLASS=DatabaseSeeder::class
  
- #specify the package to test 
- - export PACKAGE_NAME=hms/App 
- 
-  #run the setup script
-  - curl -s https://github.com/MohamedSeliem/hms/blob/master/setup.sh
-  
-  
+#specify the package to test 
+- export PACKAGE_NAME=hms/App
+#run the setup script
+- curl -s https://github.com/MohamedSeliem/hms/blob/master/setup.sh

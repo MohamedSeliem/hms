@@ -23,13 +23,14 @@
                     <div class="navbar-start">
                     @guest
                     <a class="navbar-item is-tab is-active" href="{{ route('login') }}">Login</a>
+                    <a class="navbar-item is-tab " href="{{ route('contact') }}">Contact Us</a>
                     @else
                     <a class="navbar-item is-tab is-active" href="{{ route('home') }}">Welcome</a>
-                    @endguest
                     <a class="navbar-item is-tab " href="#">Solution</a>
                     <a class="navbar-item is-tab " href="#">Resources</a>
-                    <a class="navbar-item is-tab " href="#">Contact Us</a>
-                    <a class="navbar-item is-tab " href="#">About</a>
+                    <a class="navbar-item is-tab " href="{{ route('contact') }}">Contact Us</a>
+                    @endguest
+
                     </div>
 
                     <div class="navbar-end nav-menu" style="overflow: visible">

@@ -25,3 +25,5 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator|suppo
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::post('/contact', 'ContactController@contact')->name('contact');
