@@ -29,6 +29,37 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     *
+     * Boot the model.
+     *
+     */
+
+    public static function boot()
+
+    {
+        parent::boot();
+        static::creating(function ($user) {
+
+            $user->token = str_random(40);
+        });
+
+    }
+
+    /**
+    * Confirm the user.
+     *
+     * @return void
+     */
+
+    public function confirmEmail()
+
+    {
+        $this->confirmed = true;
+        $this->token = null;
+        $this->save();
+    }
+    
     public function posts(){
         return $this->hasMany(Post::class);
     }

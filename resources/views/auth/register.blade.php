@@ -6,6 +6,7 @@
         <div class="card">
             <div class="card-content">
                 <h1 class="title">Register</h1>
+                @include('partials.messages')
                 <form action="{{route('register')}}" method="POST" role="form">
                    {{csrf_field()}}
                 <div class="field">
