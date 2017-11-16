@@ -13,13 +13,22 @@ use Input;
 class UserController extends Controller
 {
     /**
+     * Create a new user controller instance.
+     *
+     * @return void
+     */
+    public function __construct(User $user)
+    {
+        $this->user=$user;
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-          $users = User::orderBy('id', 'desc')->paginate(10);
+         $users = User::orderBy('id', 'desc')->paginate(10);
          return view('manage.users.index')->withUsers($users);
     }
 

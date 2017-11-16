@@ -19,26 +19,8 @@ cache:
 
 services: mysql
 
-install:
-# create a new database for the hyn connection
-- export DB_USERNAME=travis DB_DATABASE=hms DB_PASSWORD= QUEUE_DRIVER=sync
-# specify the laravel service providers to insert 
-- export PACKAGE_PROVIDER=" 
-# Package Service Providers... 
-Laravel\\\\Passport\\\\PassportServiceProvider::class,
-# Application Service Providers... 
-App\\\\Providers\\\\AppServiceProvider::class,
-App\\\\Providers\\\\AuthServiceProvider::class,
-App\\\\Providers\\\\ObserverServiceProvider::class,
-App\\\\Providers\\\\EventServiceProvider::class,
-App\\\\Providers\\\\RouteServiceProvider::class,
-#Third Party Service Providers 
-Laratrust\\\\LaratrustServiceProvider::class,"
-
-#specify the seed class to seed the data 
-- export SEED_CLASS=DatabaseSeeder::class
- 
-#specify the package to test 
-- export PACKAGE_NAME=hms/App
-#run the setup script
-- curl -s https://github.com/MohamedSeliem/hms/blob/master/setup.sh
+before_script:
+  -"composer install"
+script:
+  -chmod +x testrunner
+  -/testrunner

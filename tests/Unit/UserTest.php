@@ -4,8 +4,9 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\user;
+use App\User;
 use Mockery;
+use App\Http\Controllers\UserController;
 
 class UserTest extends TestCase
 {
@@ -32,12 +33,15 @@ class UserTest extends TestCase
     /**
     *@test
      */
-    public function CreatingUserisCalledProperly()
+    public function indexFunctionTest()
     {
-        $mock=Mockery::mock('App\Http\UserController');
-        $mock->shouldReceive('store')->once()->andReturn('stored');
-        $testrequest=array('name' =>'ahmed','email'=>'ahmed@app.com' );
-        $this->assertEquals('stored',$mock->store($testrequest));
+        //dependency Injection
+        $mockedUser=Mockery::mock('App\User');
+        $mockedRequest=Mockery::mock('Illuminate\Http\Request');
+        $mockedUser->shouldReceive('save')->times(0)->andReturn('created');
+        $Controller=new UserController($mockedUser);
+        $result=$Controller->index(); //index function does not save user
+        $this->assertNotNull($result);
     }
 
 }

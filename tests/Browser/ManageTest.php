@@ -108,8 +108,8 @@ public function Can_not_CreateUserFromWebInterface_withEmptyFields()
                     ->press('Log in')
                     ->visit('/manage/roles/create')
                     ->assertSee('Create New Role')->assertSee('Role Details:')->assertSee('Permissions:')
-                    ->type('email', 'NewUser3@app.com')
                     ->type('name', 'NewRole')
+                    ->type('email', 'NewUser3@app.com')
                     ->press('Create new Role');
                 //after creating the user check that the user exists
              $role=Role::where('name', 'NewRole')->first();

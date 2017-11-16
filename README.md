@@ -33,8 +33,8 @@ Testing our code is an important aspect so we define a different environment for
 ( [`.env.testing`](https://github.com/MohamedSeliem/hms/blob/master/.env.example))
 to be able to run the tests you need to follow the following steps:
 1. update this file [`.env.testing`](https://github.com/MohamedSeliem/hms/blob/master/.env.example) with your testing environment credentials. (e.g. database name, user name, user password)
-2. run [`chmod +x testrunner`]
-3. run [`/testrunner`]
+2. run `chmod +x testrunner`
+3. run `./testrunner`
 
 P.s.  [`testrunner`](https://github.com/MohamedSeliem/hms/blob/master/testrunner) is a simple script to run your tests, which will refresh the testing database and intiate the whole testing process with a new database dedicated to your testing.
 
