@@ -5,46 +5,39 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\user;
+use Mockery;
 
 class UserTest extends TestCase
 {
+        public function tearDown()
+        {
+            Mockery::close();
+        }
 	 /**
 	 *@test
      */
 
-     public function CheckUserCreatedInTheDatabase()
+     public function CheckUserCanbesavedInTheDatabase()
     {
     	//creating a new user
-    	$user=new User(array('name' => 'patient','email'=>'patient@app.com','password'=>'password'));
-    	$this->be($user);
 
 
-    	//patient Id is 3
-    	$this->assertEquals('3',$user->getAuthIdentifierName());
+    	$mockedUser=Mockery::mock('App\User');
+        $mockedUser->shouldReceive('save')->once()->andReturn('created');
+
+    	$this->assertEquals('created',$mockedUser->save());
     	
-    	//patient password is password
+    }
 
-		$this->assertEquals('password',$user->getAuthPassword());
-   		
-   		//patient tocken tkb5A3OzKsNrS3EZg02RJ7ejVcTPQ6uupsEOZdOZNxWsr7z3QyJa1997q05D 
-		$this->assertEquals('tkb5A3OzKsNrS3EZg02RJ7ejVcTPQ6uupsEOZdOZNxWsr7z3QyJa1997q05D',$user->getRememberToken());
+    /**
+    *@test
+     */
+    public function CreatingUserisCalledProperly()
+    {
+        $mock=Mockery::mock('App\Http\UserController');
+        $mock->shouldReceive('store')->once()->andReturn('stored');
+        $testrequest=array('name' =>'ahmed','email'=>'ahmed@app.com' );
+        $this->assertEquals('stored',$mock->store($testrequest));
     }
 
 }
-
-/*
-	public function tearDown(){
-		Mockery::close();
-	}
-    /**
-	 *@test
-    
-    public function testExample()
-    {
-        $mock=Mockery::mock('App\User');
-        $mock->shouldReceive('posts')->once()->andReturn('mocked');
-
-
-        $this->assertEquals('mocked',$mock->posts());
-    }
-    */
