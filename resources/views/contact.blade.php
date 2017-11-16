@@ -21,8 +21,13 @@
                 <!--start-top-nav-->
                 <div class="top-nav">
                     <ul>
-                        <li class="active"><a href="{{ route('login') }}">Log In</a></li>
+                    @auth
+                    <li class="active"><a href="{{ url('/home') }}">Dashboard</a></li>
+                    @else
+                        <li class="active"><a href="{{ route('login') }}">Login</a></li>
+                        
                         <li><a href="{{ route('register') }}">Register</a></li>
+                    @endauth
                     </ul>                   
                 </div>
                 <div class="clear"> </div>

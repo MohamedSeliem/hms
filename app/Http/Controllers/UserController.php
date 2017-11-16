@@ -19,8 +19,8 @@ class UserController extends Controller
      */
     public function index()
     {
-              $users = User::orderBy('id', 'desc')->paginate(10);
-      return view('manage.users.index')->withUsers($users);
+          $users = User::orderBy('id', 'desc')->paginate(10);
+         return view('manage.users.index')->withUsers($users);
     }
 
     /**
@@ -31,7 +31,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::all();
-         return view('manage.users.create')->withRoles($roles);
+        return view('manage.users.create')->withRoles($roles);
     }
 
     /**
@@ -77,6 +77,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function show($id)
     {
          $user = User::where('id', $id)->with('roles')->first();
