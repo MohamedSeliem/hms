@@ -1,4 +1,5 @@
 php artisan migrate:refresh --env=testing
 php artisan passport:install --env=testing
 php artisan db:seed --env=testing
+php artisan dusk
 vendor/bin/phpunit
