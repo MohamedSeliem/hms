@@ -1,3 +1,10 @@
+<p align="center"><img src="https://github.com/MohamedSeliem/hms/blob/master/public/images/hms-logo.png" height="50dp" width="200dp"></p>
+
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
+
 ## Health Monitoring System
 
 ## Synopsis
@@ -13,18 +20,18 @@ This project tends to create software solution to keep patients engaged with the
 
 ## Setup
 
-Setup is straightforward, it is similar to every other Laravel Server.
+Setup is straightforward, it is similar to every other web Server based on Laravel Framework.
 
 
  1. run `git clone https://github.com/MohamedSeliem/hms.git` in your local machine.
  2. to install the project dependencies run `composer install`, 
-    if you did not install composer please refer to this [link](https://getcomposer.org/doc/00-intro.md) for installation steps
- 3. Create new `.env` file to include your environment variable (e.g. [`.env.example`](https://github.com/MohamedSeliem/hms/blob/master/.env.example))
- 4. Generate new key by running this command `php artisan key:generate`
- 5. to create the database tables run `php artisan migrate`
+    if you did not install composer please refer to this [link](https://getcomposer.org/doc/00-intro.md) for installation steps.
+ 3. Create new `.env` file to include your environment variable. e.g. [`.env.example`](https://github.com/MohamedSeliem/hms/blob/master/.env.example).
+ 4. Generate new key by running this command `php artisan key:generate`.
+ 5. to create the database tables run `php artisan migrate`.
  6. make sure that your database tables contain entries by using seeder `php artisan db:seed` 
-    or by using user factory `php artisan tinker`, then `$user=factory(App\User::class,n)->create()`, where n is the number of the fake users you want to create
- 5. run your server by running this command `php artisan serve`
+    or by using user factory `php artisan tinker`, then `$user=factory(App\User::class,n)->create()`, where n is the number of the fake users you want to create.
+ 5. run your server by running this command `php artisan serve`.
 
 You can now either use your machine's webserver to view the default home page http://127.0.0.1:8000
 
@@ -32,15 +39,19 @@ You can now either use your machine's webserver to view the default home page ht
 Testing our code is an important aspect so we define a different environment for testing 
 ( [`.env.testing`](https://github.com/MohamedSeliem/hms/blob/master/.env.example))
 to be able to run the tests you need to follow the following steps:
-1. update this file [`.env.testing`](https://github.com/MohamedSeliem/hms/blob/master/.env.example) with your testing environment credentials. (e.g. database name, user name, user password)
-2. run `chmod +x testrunner`
-3. run `./testrunner`
+1. update this file [`.env.testing`](https://github.com/MohamedSeliem/hms/blob/master/.env.example) with your testing environment credentials. (e.g. database name, user name, user password).
+2. run `chmod +x testrunner`.
+3. run `./testrunner`.
 
 P.s.  [`testrunner`](https://github.com/MohamedSeliem/hms/blob/master/testrunner) is a simple script to run your tests, which will refresh the testing database and intiate the whole testing process with a new database dedicated to your testing.
 
- 
+We use phpunit testing, Mockery, and laravel/dusk in our testing to cover
 
+1. [browser testing](https://github.com/MohamedSeliem/hms/tree/master/tests/Browser).
+2. [feature testing](https://github.com/MohamedSeliem/hms/tree/master/tests/Feature).
+3. [unit testing with Mocking](https://github.com/MohamedSeliem/hms/blob/master/tests/Unit/UserTest.php).
 
+Finally, we use Travis CI to build our project online by setting up [travis Script](https://github.com/MohamedSeliem/hms/blob/master/.travis.yml)
 
-
-
+##License
+This work uses Laravel framework, which is an open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
