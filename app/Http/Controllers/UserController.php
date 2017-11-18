@@ -72,6 +72,7 @@ class UserController extends Controller
       $user = new User();
       $user->name = $request->name;
       $user->email = $request->email;
+      $user->role=$request->role;
       $user->password = Hash::make($password);
       $user->save();
       if ($request->roles) {
@@ -122,6 +123,7 @@ class UserController extends Controller
       $user = User::findOrFail($id);
       $user->name = $request->name;
       $user->email = $request->email;
+      $user->role=$request->role;
       if ($request->password_options == 'auto') {
         $length = 10;
         $keyspace = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';

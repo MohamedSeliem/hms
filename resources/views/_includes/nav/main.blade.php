@@ -41,17 +41,12 @@
                         <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">Hey {{ Auth::user()->name }}</a>
                         <div class="navbar-dropdown is-right" style="overflow: visible;" >
-                        <a href="#" class="navbar-item">
+                        <a href="{{url('/user/dashboard')}}" class="navbar-item">
                         <span class="icon">
-                        <i class="fa fa-fw fa-user-circle-o m-r-5"></i>
-                        </span>Profile
+                        <i class="fa fa-fw fa-tachometer m-r-5"></i>
+                        </span>Dashboard
                         </a>
 
-                        <a href="#" class="navbar-item">
-                        <span class="icon">
-                        <i class="fa fa-fw fa-bell m-r-5"></i>
-                        </span>Notifications
-                        </a>
                         <a href="{{route('manage.dashboard')}}" class="navbar-item">
                         <span class="icon">
                         <i class="fa fa-fw fa-cog m-r-5"></i>

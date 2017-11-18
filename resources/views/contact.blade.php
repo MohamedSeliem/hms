@@ -22,7 +22,7 @@
                 <div class="top-nav">
                     <ul>
                     @auth
-                    <li class="active"><a href="{{ url('/home') }}">Dashboard</a></li>
+                    <li class="active"><a href="{{ url('/user/dashboard') }}">Dashboard</a></li>
                     @else
                         <li class="active"><a href="{{ route('login') }}">Login</a></li>
                         

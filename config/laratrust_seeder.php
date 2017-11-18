@@ -12,12 +12,19 @@ return [
             'profile' => 'r,u'
         ],
         'patient' => [
+            'users' => 'r',
             'profile' => 'r,u'
         ],
         'doctor' => [
+            'users' => 'r',
+            'profile' => 'r,u'
+        ],
+        'pharmacist' => [
+            'users' => 'r',
             'profile' => 'r,u'
         ],
         'supporter' => [
+            'users' => 'r',
             'profile' => 'r,u'
         ],
         'subscriber' => [

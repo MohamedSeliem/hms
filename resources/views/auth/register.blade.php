@@ -28,6 +28,19 @@
                     @endif
                 </div>
                 <div class="field">
+                    <label for="role" class="label">Register as a</label>
+                    <p class="control">
+                        <select class="input {{$errors->has('role')?'is-danger':''}}" type="text" name="role" id="role" placeholder="Patient" value="{{old('role')}}" required>
+                          <option value="doctor">Doctor</option>
+                          <option value="pharmacist">Pharmacist</option>
+                          <option value="patient">Patient</option>
+                        </select>
+                    </p>
+                    @if($errors->has('role'))
+                        <p class="help is-danger">{{$errors->first('erole')}}</p>
+                    @endif
+                </div>
+                <div class="field">
                     <label for="password " class="label">Password</label>
                     <p class="control">
                         <input class="input {{$errors->has('password')?'is-danger':''}}" type="password" name="password" id="password" required>

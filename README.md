@@ -54,4 +54,5 @@ We use phpunit testing, Mockery, and laravel/dusk in our testing to cover
 Finally, we use Travis CI to build our project online by setting up [travis Script](https://github.com/MohamedSeliem/hms/blob/master/.travis.yml)
 
 ##License
+
 This work uses Laravel framework, which is an open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
