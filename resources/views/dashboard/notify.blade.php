@@ -1,14 +1,14 @@
 @extends('layouts.dash')
 @section('content')
     <div class="wrapper">
-        <div class="sidebar" data-color="blue" data-image="{{asset('images/sidebar-5.jpg')}}">
+        <div class="sidebar" data-color="purple" data-image="{{asset('images/sidebar-5.jpg')}}">
         <!--
             Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
             Tip 2: you can also add an image using data-image tag
         -->
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="{{url('/')}}" style="font-size: 20px;"> Health Monitoring System</a>
+                <h3 href="{{url('/')}}" style="font-size: 20px;"> Health Monitoring System</h3>
                 <h3 style="font-size: 10px;"> We care about your Health.</h3>
             </div>
                 <ul class="nav">
@@ -239,29 +239,34 @@
                 <nav class="pull-left">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{{url('/')}}">
                                 Home
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Company
+                            <a href="https://github.com/MohamedSeliem/hms">
+                                git hub
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Portfolio
+                            <a href="https://github.com/MohamedSeliem/hms/blob/master/README.md">
+                                Documentation
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                               Blog
+                            <a href="https://github.com/MohamedSeliem/HttpClient">
+                                Android Application
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://people.cmix.louisiana.edu/~c00302008/">
+                               About Us
                             </a>
                         </li>
                     </ul>
                 </nav>
                 <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>
+                    &copy; <script>document.write(new Date().getFullYear())</script> ,Welcome to HMS Dashboard - We take care of you.
                 </p>
             </div>
         </footer>

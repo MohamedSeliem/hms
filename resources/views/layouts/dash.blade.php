@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -29,19 +28,18 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{{asset('css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
+        <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="{{asset('css/demo.css')}}" rel="stylesheet" />
      @yield('styles')
 </head>
 
 <body>
-    <div id="dash">
+    <div id="app">
         @yield('content')
     </div>
-
+</body>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ99YneQpBoEoTbH39i4diWBqjqVt59fg &libraries=places"
-    async="" defer=""></script>
-    <script src="{{asset('js/mapscript.js')}}"></script>
         <!--   Core JS Files   -->
     <script src="{{asset('js/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
@@ -55,11 +53,11 @@
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
     <script src="{{asset('js/light-bootstrap-dashboard.js')}}"></script>
 
-    <script>
-        $().ready(function(){
-            demo.initGoogleMaps();
-        });
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ99YneQpBoEoTbH39i4diWBqjqVt59fg &libraries=places"
+    async="" defer=""></script>
+    
+    <script src="{{asset('js/mapscript.js')}}"></script>
+
     @yield('scripts')
-</body>
+
 </html>

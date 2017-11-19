@@ -1,5 +1,5 @@
 var map, infoWindow;
-$(document).ready(function(){
+window.onload=function(){
   initMap();
       function initMap() {
         var lafLatLng=new google.maps.LatLng(30.211573, -92.031394);
@@ -76,4 +76,4 @@ $(document).ready(function(){
                 }
               }
         }
- });
+ };

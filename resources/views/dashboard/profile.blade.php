@@ -1,14 +1,14 @@
 @extends('layouts.dash')
 @section('content')
     <div class="wrapper">
-        <div class="sidebar" data-color="blue" data-image="{{asset('images/sidebar-5.jpg')}}">
+        <div class="sidebar" data-color="red" data-image="{{asset('images/sidebar-5.jpg')}}">
         <!--
             Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
             Tip 2: you can also add an image using data-image tag
         -->
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="{{url('/')}}" style="font-size: 20px;"> Health Monitoring System</a>
+                <h3 href="{{url('/')}}" style="font-size: 20px;"> Health Monitoring System</h3>
                 <h3 style="font-size: 10px;"> We care about your Health.</h3>
             </div>
                 <ul class="nav">
@@ -164,13 +164,13 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control" placeholder="Username" value="michael23">
+                                                <input type="text" class="form-control" placeholder="Username" value="mseliem11">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" class="form-control" placeholder="Email">
+                                                <input type="email" class="form-control" placeholder="mseliem11@gmail.com">
                                             </div>
                                         </div>
                                     </div>
@@ -179,13 +179,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>First Name</label>
-                                                <input type="text" class="form-control" placeholder="Company" value="Mike">
+                                                <input type="text" class="form-control" placeholder="Company" value="Mohamed">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Last Name</label>
-                                                <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                                <input type="text" class="form-control" placeholder="Last Name" value="Seliem">
                                             </div>
                                         </div>
                                     </div>
@@ -194,7 +194,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Address</label>
-                                                <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                                                <input type="text" class="form-control" placeholder="Home Address" value="200 Oak Crest Dr. Lafayette, La 70503">
                                             </div>
                                         </div>
                                     </div>
@@ -203,19 +203,19 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>City</label>
-                                                <input type="text" class="form-control" placeholder="City" value="Mike">
+                                                <input type="text" class="form-control" placeholder="City" value="Lafayette">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Country</label>
-                                                <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                                                <input type="text" class="form-control" placeholder="Country" value="USA">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Postal Code</label>
-                                                <input type="number" class="form-control" placeholder="ZIP Code">
+                                                <input type="number" class="form-control" placeholder="70503">
                                             </div>
                                         </div>
                                     </div>
@@ -224,7 +224,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>About Me</label>
-                                                <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                                <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mohamed">PhD Student at university of louisiana at Lafayette </textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -243,16 +243,16 @@
                             <div class="content">
                                 <div class="author">
                                      <a href="#">
-                                    <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..."/>
+                                    <img class="avatar border-gray" src="{{asset('/images/faces/face-3.jpg')}}" alt="..."/>
 
-                                      <h4 class="title">Mike Andrew<br />
-                                         <small>michael24</small>
+                                      <h4 class="title">Mohamed Seliem<br />
+                                         <small>mseliem11</small>
                                       </h4>
                                     </a>
                                 </div>
-                                <p class="description text-center"> "Lamborghini Mercy <br>
-                                                    Your chick she so thirsty <br>
-                                                    I'm in that two seat Lambo"
+                                <p class="description text-center"> "PhD Student at university of louisiana at Lafayette.<br>
+                                                    Center for Advanced Computer Studies.<br>
+                                                    Computer Engineering."
                                 </p>
                             </div>
                             <hr>
@@ -275,23 +275,28 @@
                 <nav class="pull-left">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{{url('/')}}">
                                 Home
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Company
+                            <a href="https://github.com/MohamedSeliem/hms">
+                                git hub
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Portfolio
+                            <a href="https://github.com/MohamedSeliem/hms/blob/master/README.md">
+                                Documentation
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                               Blog
+                            <a href="https://github.com/MohamedSeliem/HttpClient">
+                                Android Application
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://people.cmix.louisiana.edu/~c00302008/">
+                               About Us
                             </a>
                         </li>
                     </ul>
@@ -304,7 +309,5 @@
 
     </div>
 </div>
-</body>
 
-</html>
 @endsection

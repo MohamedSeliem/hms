@@ -8,7 +8,7 @@
         -->
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="{{url('/')}}" style="font-size: 20px;"> Health Monitoring System</a>
+                <h3 href="{{url('/')}}" style="font-size: 20px;"> Health Monitoring System</h3>
                 <h3 style="font-size: 10px;"> We care about your Health.</h3>
             </div>
                 <ul class="nav">
@@ -144,6 +144,11 @@
 
 
             <div class="content">
+                     @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-4">
@@ -351,52 +356,43 @@
                 </div>
             </div>
 
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                   Blog
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </footer>
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="{{url('/')}}">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/MohamedSeliem/hms">
+                                git hub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/MohamedSeliem/hms/blob/master/README.md">
+                                Documentation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/MohamedSeliem/HttpClient">
+                                Android Application
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://people.cmix.louisiana.edu/~c00302008/">
+                               About Us
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; <script>document.write(new Date().getFullYear())</script> ,Welcome to HMS Dashboard - We take care of you.
+                </p>
+            </div>
+        </footer>
 
         </div>
     </div>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-
-            demo.initChartist();
-
-            $.notify({
-                icon: 'pe-7s-gift',
-                message: "Welcome to <b>HMS Dashboard</b> - We take care of you."
-
-            },{
-                type: 'info',
-                timer: 4000
-            });
-
-        });
-    </script>
 @endsection
