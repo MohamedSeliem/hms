@@ -56,3 +56,15 @@ Finally, we use Travis CI to build our project online by setting up [travis Scri
 ## License
 
 This work uses Laravel framework, which is an open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+###Some useful links:
+
+**Git -**
+* https://www.atlassian.com/git/tutorials/
+* http://www.vogella.com/tutorials/Git/article.html
+* http://www.tutorialspoint.com/git/git_basic_concepts.htm
+
+**Bootstrap -**
+* http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/
+* http://www.w3schools.com/bootstrap/
+* http://getbootstrap.com/getting-started/
