@@ -31,7 +31,7 @@ Setup is straightforward, it is similar to every other web Server based on Larav
  5. to create the database tables run `php artisan migrate`.
  6. make sure that your database tables contain entries by using seeder `php artisan db:seed` 
     or by using user factory `php artisan tinker`, then `$user=factory(App\User::class,n)->create()`, where n is the number of the fake users you want to create.
- 5. run your server by running this command `php artisan serve`.
+ 7. run your server by running this command `php artisan serve`.
 
 You can now either use your machine's webserver to view the default home page http://127.0.0.1:8000
 
@@ -53,11 +53,17 @@ We use phpunit testing, Mockery, and laravel/dusk in our testing to cover
 
 Finally, we use Travis CI to build our project online by setting up [travis Script](https://github.com/MohamedSeliem/hms/blob/master/.travis.yml)
 
+## Collaborators
+
+1. [Mohamed Seliem](https://github.com/MohamedSeliem)
+2. [Jite Eghagha](https://github.com/jiteeghagha)
+3. [SM Zobaed](https://github.com/zobaed11)
+
 ## License
 
 This work uses Laravel framework, which is an open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
-###Some useful links:
+## Some useful links:
 
 **Git -**
 * https://www.atlassian.com/git/tutorials/

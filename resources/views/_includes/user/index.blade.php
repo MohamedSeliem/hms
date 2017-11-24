@@ -11,8 +11,8 @@
                             <div class="card">
 
                                 <div class="header">
-                                    <h4 class="title">Email Statistics</h4>
-                                    <p class="category">Last Campaign Performance</p>
+                                    <h4 class="title">Today's Activites</h4>
+                                    <p class="category">Performance Track</p>
                                 </div>
                                 <div class="content">
                                     <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
@@ -35,22 +35,43 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="header">
-                                    <h4 class="title">{{Auth::user()->role}} Prescriptions</h4>
-                                    <p class="category">24 Hours performance</p>
+                                    <h4 class="title">{{Auth::user()->name}} Prescriptios</h4>
+                                    <p class="category">Recently issued</p>
                                 </div>
                                 <div class="content">
-                                    <div id="chartHours" class="ct-chart"></div>
+                                     <div class="row">
+                                      <div class="col-md-6  col-md-offset-3 searchbox">
+                                         <div class="input-group">
+                                            <input type="text" id="searchtext" class="form-control" placeholder="Search for...">
+                                            <span class="input-group-btn">
+                                            <button class="btn btn-default" id="search" type="button"><i class="fa fa-search"></i>&nbsp;Search</button>
+                                            </span>
+                                         </div>
+                                         <!-- /input-group -->
+                                      </div>
+                                      <div class="col-md-3 searchbox"><button class="btn btn-success" id="reload">Reload</button></div>
+                                   </div>
+
+                                   <div class="row">
+                                      <div class="panel-body">
+                                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                         </div>
+                                         <hr>
+                                         <button id="older" class="btn btn-default col-md-offset-5">Older</button>
+                                      </div>
+                                   </div>
                                     <div class="footer">
                                         <div class="legend">
-                                            <i class="fa fa-circle text-info"></i> Open
-                                            <i class="fa fa-circle text-danger"></i> Click
-                                            <i class="fa fa-circle text-warning"></i> Click Second Time
+                                            <i class="fa fa-circle text-info"></i> Issued
+                                            <i class="fa fa-circle text-danger"></i> Pending
+                                            <i class="fa fa-circle text-warning"></i> Obsolte
                                         </div>
                                         <hr>
                                         <div class="stats">
                                             <i class="fa fa-history"></i> Updated 3 minutes ago
                                         </div>
                                     </div>
+                                
                                 </div>
 
 
@@ -66,16 +87,17 @@
                         <div class="col-md-6">
                             <div class="card ">
                                 <div class="header">
-                                    <h4 class="title">2014 Sales</h4>
-                                    <p class="category">All products including Taxes</p>
+                                    <h4 class="title">Health Monitoring Statistics</h4>
+                                    <p class="category">Vitals Performance</p>
                                 </div>
-                                <div class="content">
-                                    <div id="chartActivity" class="ct-chart"></div>
+                                <div class="content" >
+                                    <img id="chartActivity" class="ct-chart" src="{{asset('images/Capture.JPG')}}"></img>
 
                                     <div class="footer">
                                         <div class="legend">
-                                            <i class="fa fa-circle text-info"></i> Tesla Model S
-                                            <i class="fa fa-circle text-danger"></i> BMW 5 Series
+                                            <i class="fa fa-circle text-info"></i> Heart Performance
+                                            <i class="fa fa-circle text-danger"></i> Lungs Performance
+                                            <i class="fa fa-circle text-default"></i> Blood Pressure
                                         </div>
                                         <hr>
                                         <div class="stats">
@@ -89,8 +111,8 @@
                         <div class="col-md-6">
                             <div class="card ">
                                 <div class="header">
-                                    <h4 class="title">Tasks</h4>
-                                    <p class="category">Backend development</p>
+                                    <h4 class="title">Check List</h4>
+                                    <p class="category">Keep the good work</p>
                                 </div>
                                 <div class="content">
                                     <div class="table-full-width">
@@ -103,7 +125,7 @@
                                                             <label for="checkbox1"></label>
                                                         </div>
                                                     </td>
-                                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                                    <td>Wake up Early, Be active throughout your day</td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
                                                             <i class="fa fa-edit"></i>
@@ -120,7 +142,7 @@
                                                             <label for="checkbox2"></label>
                                                         </div>
                                                     </td>
-                                                    <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                                    <td>15 Minutes Exercise, Move more, snack less</td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
                                                             <i class="fa fa-edit"></i>
@@ -137,7 +159,7 @@
                                                             <label for="checkbox3"></label>
                                                         </div>
                                                     </td>
-                                                    <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                                    <td>Following your Healthy Diet, Activate your passion for Healthy food. 
                                                     </td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
@@ -155,7 +177,7 @@
                                                             <label for="checkbox4"></label>
                                                         </div>
                                                     </td>
-                                                    <td>Create 4 Invisible User Experiences you Never Knew About</td>
+                                                    <td>Drink a lot of Water, keep your body hydrated</td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
                                                             <i class="fa fa-edit"></i>
@@ -172,7 +194,7 @@
                                                             <label for="checkbox5"></label>
                                                         </div>
                                                     </td>
-                                                    <td>Read "Following makes Medium better"</td>
+                                                    <td>You need to take this medicine three times a day</td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
                                                             <i class="fa fa-edit"></i>
@@ -189,7 +211,7 @@
                                                             <label for="checkbox6"></label>
                                                         </div>
                                                     </td>
-                                                    <td>Unfollow 5 enemies from twitter</td>
+                                                    <td>Doze Control: Eat Right and You'll Sleep Like a Baby</td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
                                                             <i class="fa fa-edit"></i>
