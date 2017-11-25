@@ -5,6 +5,10 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+
+// The API will not serve any GET requests, are we just testing GET requests anyway?
+// If the API will always return a JSONObject should we not assert for that? At the moment it looks like we
+// are asserting for a string within the html
 class ApiTest extends TestCase
 {
  
