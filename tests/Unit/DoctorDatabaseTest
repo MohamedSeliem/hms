@@ -1,3 +1,9 @@
+<?php
+
+namespace Tests\Unit;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 class DoctorDatabaseTest extends TestCase
 {
 		   use \Tests\ModelTestHelper;
