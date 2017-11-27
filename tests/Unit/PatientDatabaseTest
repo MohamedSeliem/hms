@@ -1,156 +1,154 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
 class PatientDatabaseTest extends TestCase
 {
-		   use \Tests\ModelTestHelper;
-		    public $model;
-		    public function setUp()
-		    {
-		        $this->model = Mockery::mock('patient');
-		    }
-		    public function testGetDefaultRules()
-		    {
-		        $this->model->shouldReceive('getDefaultRules')
-		            ->once()
-		            ->andReturn('get');
-		        $this->assertEquals('get', $this->getDefaultRules($this->model));
-		    }
-		    public function testGetAttributeRules()
-		    {
-		        $this->model->shouldReceive('getDefaultRules')
-		            ->once()
-		            ->andReturn(['zero' => 'bar']);
-		        $result = $this->getAttributeRules($this->model, 'zero');
-		        $this->assertEquals(['bar'], $result);
-		    }
-		    public function testAssertValidatesWithNoParameter()
-		    {
-		        $this->model->shouldReceive('getDefaultRules')
-		            ->once()
-		            ->andReturn(['name' => 'required']);
-		        $this->assertValidatesRequired($this->model, 'name');
-		    }
-		    public function testAssertValidatesWithOneParameter()
-		    {
-		        $this->model->shouldReceive('getDefaultRules')
-		            ->once()
-		            ->andReturn(['password' => 'min:6']);
-		        $this->assertValidatesMin($this->model, 'password', 6);
-		    }
-		    public function testAssertValidatesWithTwoParameters()
-		    {
-		        $this->model->shouldReceive('getDefaultRules')
-		            ->once()
-		            ->andReturn(['email' => 'required_if:email,name']);
-		        $this->assertValidatesRequiredIf($this->model, 'email', 'email', 'name');
-		    }
-		    public function testAssertValidatesWithMultipleParameters()
-		    {
-		        $this->model->shouldReceive('getDefaultRules')
-		            ->twice()
-		            ->andReturn(['foo' => 'not_in:email,name,token']);
-		        // Test array and string syntax.
-		        $this->assertValidatesNotIn($this->model, 'email', ['email', 'name', 'token']);
-		        $this->assertValidatesNotIn($this->model, 'email', 'email,name,token');
-		    }
-		    public function testAssertValid()
-		    {
-		        $this->model->shouldReceive('isValid')
-		            ->once()
-		            ->andReturn(true);
-		        $this->assertValid($this->model);
-		    }
-		    public function testAssertInvalid()
-		    {
-		        $this->model->shouldReceive('isInvalid')
-		            ->once()
-		            ->andReturn(true);
-		        $this->assertInvalid($this->model);
-		    }
-		    public function testAssertValidWith()
-		    {
-		        $this->model->shouldReceive('setAttribute')
-		            ->once()
-		            ->with('email', 'name');
-		        $this->model->shouldReceive('isValid')
-		            ->once()
-		            ->andReturn(true);
-		        $this->assertValidWith($this->model, 'email', 'name');
-		    }
-		    public function testAssertValidWithout()
-		    {
-		        $this->model->shouldReceive('setAttribute')
-		            ->once()
-		            ->with('name', null);
-		        $this->model->shouldReceive('isValid')
-		            ->once()
-		            ->andReturn(true);
-		        $this->assertValidWithout($this->model, 'name');
-		    }
-		    public function testAssertInvalidWith()
-		    {
-		        $this->model->shouldReceive('setAttribute')
-		            ->once()
-		            ->with('email', 'name');
-		        $this->model->shouldReceive('isInvalid')
-		            ->once()
-		            ->andReturn(true);
-		        $this->assertInvalidWith($this->model, 'email', 'name');
-		    }
-		    public function tesetAssertInvalidWithout()
-		    {
-		        $this->model->shouldReceive('setAttribute')
-		            ->once()
-		            ->with('email', null);
-		        $this->model->shouldReceive('isInvalid')
-		            ->once()
-		            ->andReturn(true);
-		        $this->assertInvalidWithout($this->model, 'email');
-		    }
-		    public function testAssertRespondsTo()
-		    {
-		        $this->assertRespondsTo($this->model, 'isValid');
-		    }
-		    public function testAssertBelongsTo()
-		    {
-		        $this->assertBelongsTo('patient', 'email');
-		    }
-		    public function testBelongsToMany()
-		    {
-		        $this->assertBelongsToMany('patient', 'doctor');
-		    }
-		    public function testHasOne()
-		    {
-		        $this->assertHasOne('patient', 'name');
-		    }
-		    public function testHasMany()
-		    {
-		        $this->assertHasMany('patient', 'doctors');
-		    }
-		}
-		class patient extends \Illuminate\Database\Eloquent\Model {
-		    public function getDefaultRules() {}
-		    public function isValid() {}
-		    public function isInvalid() {}
-		    public function category()
-		    {
-		        return $this->belongsTo('user');
-		    }
-		    public function doctors()
-		    {
-		        return $this->belongsToMany('doctors');
-		    }
-		    public function attribute()
-		    {
-		        return $this->hasOne('name');
-		    }
-		    public function assigned()
-		    {
+	use \Tests\ModelTestHelper;
+	public $model;
+	public function setUp()
+	   {
+	        $this->model = Mockery::mock('patient');
+	    }
+	    public function testGetDefaultRules()
+	    {
+	        $this->model->shouldReceive('getDefaultRules')
+	            ->once()
+	            ->andReturn('get');
+	        $this->assertEquals('get', $this->getDefaultRules($this->model));
+	    }
+	    public function testGetAttributeRules()
+	    {
+	        $this->model->shouldReceive('getDefaultRules')
+	            ->once()
+	            ->andReturn(['zero' => 'bar']);
+	        $result = $this->getAttributeRules($this->model, 'zero');
+	        $this->assertEquals(['bar'], $result);
+	    }
+	    public function testAssertValidatesWithNoParameter()
+	    {
+	        $this->model->shouldReceive('getDefaultRules')
+	            ->once()
+	            ->andReturn(['name' => 'required']);
+	        $this->assertValidatesRequired($this->model, 'name');
+	    }
+	    public function testAssertValidatesWithOneParameter()
+	    {
+	        $this->model->shouldReceive('getDefaultRules')
+	            ->once()
+	            ->andReturn(['password' => 'min:6']);
+	        $this->assertValidatesMin($this->model, 'password', 6);
+	    }
+	    public function testAssertValidatesWithTwoParameters()
+	    {
+	        $this->model->shouldReceive('getDefaultRules')
+	            ->once()
+	            ->andReturn(['email' => 'required_if:email,name']);
+	        $this->assertValidatesRequiredIf($this->model, 'email', 'email', 'name');
+	    }
+	    public function testAssertValidatesWithMultipleParameters()
+	    {
+	        $this->model->shouldReceive('getDefaultRules')
+	            ->twice()
+	            ->andReturn(['foo' => 'not_in:email,name,token']);
+	        // Test array and string syntax.
+	        $this->assertValidatesNotIn($this->model, 'email', ['email', 'name', 'token']);
+	        $this->assertValidatesNotIn($this->model, 'email', 'email,name,token');
+	    }
+	    public function testAssertValid()
+	    {
+	        $this->model->shouldReceive('isValid')
+	            ->once()
+	            ->andReturn(true);
+	        $this->assertValid($this->model);
+	    }
+	    public function testAssertInvalid()
+	    {
+	        $this->model->shouldReceive('isInvalid')
+	            ->once()
+	            ->andReturn(true);
+	        $this->assertInvalid($this->model);
+	    }
+	    public function testAssertValidWith()
+	    {
+	        $this->model->shouldReceive('setAttribute')
+	            ->once()
+	            ->with('email', 'name');
+	        $this->model->shouldReceive('isValid')
+	            ->once()
+	            ->andReturn(true);
+	        $this->assertValidWith($this->model, 'email', 'name');
+	    }
+	    public function testAssertValidWithout()
+	    {
+	        $this->model->shouldReceive('setAttribute')
+	            ->once()
+	            ->with('name', null);
+	        $this->model->shouldReceive('isValid')
+	            ->once()
+	            ->andReturn(true);
+	        $this->assertValidWithout($this->model, 'name');
+	    }
+	    public function testAssertInvalidWith()
+	    {
+	        $this->model->shouldReceive('setAttribute')
+	            ->once()
+	            ->with('email', 'name');
+	        $this->model->shouldReceive('isInvalid')
+	            ->once()
+	            ->andReturn(true);
+	        $this->assertInvalidWith($this->model, 'email', 'name');
+	    }
+	    public function tesetAssertInvalidWithout()
+	    {
+	        $this->model->shouldReceive('setAttribute')
+	            ->once()
+	            ->with('email', null);
+	        $this->model->shouldReceive('isInvalid')
+	            ->once()
+	            ->andReturn(true);
+	        $this->assertInvalidWithout($this->model, 'email');
+	    }
+	    public function testAssertRespondsTo()
+	    {
+	        $this->assertRespondsTo($this->model, 'isValid');
+	    }
+	    public function testAssertBelongsTo()
+	    {
+	        $this->assertBelongsTo('patient', 'email');
+	    }
+	    public function testBelongsToMany()
+	    {
+	        $this->assertBelongsToMany('patient', 'doctor');
+	    }
+	    public function testHasOne()
+	    {
+	        $this->assertHasOne('patient', 'name');
+	    }
+	    public function testHasMany()
+	    {
+	        $this->assertHasMany('patient', 'doctors');
+	    }
+	}
+	class patient extends \Illuminate\Database\Eloquent\Model {
+	    public function getDefaultRules() {}
+	    public function isValid() {}
+	    public function isInvalid() {}
+	    public function category()
+	    {
+	        return $this->belongsTo('user');
+	    }
+	    public function doctors()
+	    {
+	        return $this->belongsToMany('doctors');
+	    }
+	    public function attribute()
+	    {
+	        return $this->hasOne('name');
+	    }
+	    public function assigned()
+	    {
 		        return $this->hasMany('doctor');
-		    }
+	   }
+	   }
 }
