@@ -53,6 +53,15 @@ We use phpunit testing, Mockery, and laravel/dusk in our testing to cover
 
 Finally, we use Travis CI to build our project online by setting up [travis Script](https://github.com/MohamedSeliem/hms/blob/master/.travis.yml)
 
+## More in Testing
+
+we added traits with helpers for testing models and controllers in Laravel,
+to help assert the validity of our models as well as the relationships of your models. 
+It also allows us to test the responses of our controllers.
+
+1. [ModelsTestHelper](https://github.com/MohamedSeliem/hms/blob/master/tests/ModelTestHelper.php)
+2. [ControllersTestHelper](https://github.com/MohamedSeliem/hms/blob/master/tests/ControllersTestHelper.php)
+
 ## Collaborators
 
 1. [Mohamed Seliem](https://github.com/MohamedSeliem)
