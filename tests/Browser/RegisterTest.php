@@ -6,6 +6,10 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
+// What is the maximum size of characters that a user can send in any text field?
+// Can we test for that? I have heard sending a very LONG string of characters can crash an application?
+// Can Special characters be sent to the server?
+
 class RegisterTest extends DuskTestCase
 {
     /**
