@@ -7,6 +7,10 @@ use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use App\User;
 
+//What is the maximum size of characters that a user can send as a password / user name?
+//Can we test for that? I have heard sending a very LONG string of characters can crash an application?
+//Can Special characters be sent to the server?
+
 class LoginTest extends DuskTestCase
 {
 
